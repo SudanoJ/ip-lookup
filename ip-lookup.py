@@ -19,7 +19,7 @@ ip = input("IP: ")
 r = requests.get('http://extreme-ip-lookup.com/json/' + ip)
 y = json.loads(r.text)
 
-if y["status"] in "fail":
+if "fail" in y["status"]:
   print("Ocorreu um erro ao pegar as informações do IP")
   exit()
 
